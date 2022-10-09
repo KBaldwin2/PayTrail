@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "PayTrail",
+    "slug": "PayTrail",
+    "owner": "paytrail",
+    "version": "1.12.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "primaryColor": "#015045",
+    "splash": {
+      "image": "./app/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mypaytrail.app",
+      "buildNumber": "1.12.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Access to your camera will allow you to upload printed receipts to your library."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.mypaytrail.app",
+      "versionCode": 16
+    },
+    "web": {
+      "favicon": "./app/assets/images/favicon.png",
+      "config": {}
+    },
+    "plugins": [
+      "sentry-expo",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you pick pictures for your receipts.",
+          "cameraPermission": "Access to your camera will allow you to upload printed receipts to your library."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow PayTrail to access your Photos library to save your receipts.",
+          "savePhotosPermission": "Allow PayTrail to access your Photos library to save your receipts.",
+          "isAccessMediaLocationEnabled": "true"
+        }
+      ]
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "agreeably",
+            "project": "react-native",
+            "authToken": "20c747106f8c4a9383b3c244659ace607275520c2e3c4fbeb6a10fcfd389861b"
+          }
+        }
+      ]
+    }
+  }
+}

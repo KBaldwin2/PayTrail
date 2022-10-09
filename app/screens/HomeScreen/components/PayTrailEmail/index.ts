@@ -1,0 +1,1 @@
+export { PayTrailEmail } from "./PayTrailEmail";
